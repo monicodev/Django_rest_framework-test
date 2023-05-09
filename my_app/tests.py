@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
@@ -23,9 +24,8 @@ class ChargePointModelTest(TestCase):
 
     def test_create_duplicate_charge_point(self):
         ChargePoint.objects.create(name='Test Charge Point')
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(IntegrityError):
             ChargePoint.objects.create(name='Test Charge Point')
-        self.assertIn('UNIQUE constraint failed', str(context.exception))
 
     def test_update_charge_point(self):
         charge_point = ChargePoint.objects.create(name='Test Charge Point')
