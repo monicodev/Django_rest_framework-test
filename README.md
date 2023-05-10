@@ -8,7 +8,7 @@ To start the Django development server execute the command:
 
 Base URL: http://localhost:8000/. Available endpoints:
 - GET /chargepoint: List of chargers
-- GET /chargepoint/<id> Charger details for the specified ID
+- GET /chargepoint/id: Charger details for the specified ID
 - POST /chargepoint: Create a new charger
-- PUT /chargepoint/<id> Modify the charger for the specified ID
-- DELETE /chargepoint/<id> Delete the charger for the specified ID
+- PUT /chargepoint/id: Modify the charger for the specified ID
+- DELETE /chargepoint/id: Delete the charger for the specified ID
